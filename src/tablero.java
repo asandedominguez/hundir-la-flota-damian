@@ -1,13 +1,39 @@
+/**
+ * Representa el tablero del juego.
+ *
+ * Contiene una matriz de casillas donde se colocan las naves
+ * y se gestionan los disparos del jugador.
+ */
 public class tablero {
 
+    /**
+     * Constante que representa agua (sin impacto).
+     */
     public static final int agua = 0;
+
+    /**
+     * Constante que representa un impacto en una nave.
+     */
     public static final int tocado = 1;
+
+    /**
+     * Constante que representa una nave hundida.
+     */
     public static final int hundido = 2;
 
+    /**
+     * Matriz de casillas que forman el tablero.
+     */
     private casilla[][] casillero;
 
+    /**
+     * Constructor del tablero.
+     *
+     * Inicializa el tablero 10x10, crea las casillas
+     * y coloca las naves en posiciones fijas.
+     */
     public tablero() {
-a
+
         // NAVES
         nave por1 = new nave("Destructor", "portaaviones", 5);
         nave fra1 = new nave("Bismarck", "fragata", 3);
@@ -41,7 +67,14 @@ a
         casillero[4][6].setNave(sub1);
     }
 
-    // DISPARO
+    /**
+     * Comprueba el impacto de un disparo en una posición del tablero.
+     *
+     * @param x coordenada horizontal
+     * @param y coordenada vertical
+     * @return resultado del disparo:
+     *         agua, tocado o hundido
+     */
     public Integer comprobar_impacto(int x, int y) {
         System.out.println("Impacto en (" + x + "," + y + ")");
         return casillero[x][y].disparar();

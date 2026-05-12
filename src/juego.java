@@ -1,7 +1,21 @@
+/**
+ * Clase principal del juego.
+ *
+ * Se encarga de iniciar la partida, lanzar ataques sobre el tablero
+ * y mostrar el resultado de cada ataque realizado.
+ */
 public class juego {
 
+    /**
+     * Tablero donde se realizan los ataques.
+     */
     private tablero tablero;
 
+    /**
+     * Constructor de la clase juego.
+     *
+     * Inicializa el tablero y ejecuta varios ataques de prueba.
+     */
     public juego() {
         tablero = new tablero();
 
@@ -12,6 +26,14 @@ public class juego {
         lanzar_ataque(1, 5);
     }
 
+    /**
+     * Muestra por consola el resultado de un ataque.
+     *
+     * @param resultado valor que indica el estado del ataque:
+     *                  0 = Agua,
+     *                  1 = Tocado,
+     *                  2 = Hundido
+     */
     public void mostrar_resultado(Integer resultado) {
         if (resultado == null) {
             return;
@@ -25,13 +47,24 @@ public class juego {
             System.out.println("Hundido");
         }
     }
-a
+
+    /**
+     * Realiza un ataque sobre una posición del tablero.
+     *
+     * @param x coordenada horizontal del ataque
+     * @param y coordenada vertical del ataque
+     */
     public void lanzar_ataque(int x, int y) {
         System.out.println("Ataque a " + x + "," + y);
         Integer resultado = tablero.comprobar_impacto(x, y);
         mostrar_resultado(resultado);
     }
 
+    /**
+     * Método principal del programa.
+     *
+     * @param args argumentos de línea de comandos
+     */
     public static void main(String[] args) {
         new juego();
     }
