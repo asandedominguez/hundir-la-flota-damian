@@ -6,7 +6,7 @@ public class casilla {
         this.nave = null;
         this.usada = false;
     }
-
+a
     public Integer disparar() {
         // Si ya fue usada
         if (usada) {

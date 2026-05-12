@@ -25,7 +25,7 @@ public class juego {
             System.out.println("Hundido");
         }
     }
-
+a
     public void lanzar_ataque(int x, int y) {
         System.out.println("Ataque a " + x + "," + y);
         Integer resultado = tablero.comprobar_impacto(x, y);

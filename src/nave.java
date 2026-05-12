@@ -26,7 +26,7 @@ public class nave {
             return TOCADO;
         }
     }
-
+a
     // Getters y setters opcionales
     public String getNombre() {
         return nombre;

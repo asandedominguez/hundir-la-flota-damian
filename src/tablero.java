@@ -7,7 +7,7 @@ public class tablero {
     private casilla[][] casillero;
 
     public tablero() {
-
+a
         // NAVES
         nave por1 = new nave("Destructor", "portaaviones", 5);
         nave fra1 = new nave("Bismarck", "fragata", 3);
