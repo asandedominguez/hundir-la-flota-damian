@@ -1,8 +1,9 @@
 /**
  * Representa el tablero del juego.
- *
  * Contiene una matriz de casillas donde se colocan las naves
  * y se gestionan los disparos del jugador.
+ * @author Adrián Sande Domínguez
+ * @version 1.0
  */
 public class tablero {
 
@@ -35,17 +36,17 @@ public class tablero {
     public tablero() {
 
         // NAVES
-        nave por1 = new nave("Destructor", "portaaviones", 5);
-        nave fra1 = new nave("Bismarck", "fragata", 3);
-        nave fra2 = new nave("Prince of Wales", "fragata", 3);
-        nave fra3 = new nave("Graf Spee", "fragata", 3);
+        nave port1 = new nave("Destructor", "portaaviones", 5);
+        nave frag1 = new nave("La pinta", "fragata", 3);
+        nave frag2 = new nave("La niña", "fragata", 3);
+        nave frag3 = new nave("La Santa María", "fragata", 3);
 
-        nave sub1 = new nave("U-47", "submarino", 1);
-        nave sub2 = new nave("U-96", "submarino", 1);
-        nave sub3 = new nave("U-505", "submarino", 1);
-        nave sub4 = new nave("U-534", "submarino", 1);
+        nave sub1 = new nave("titanic", "submarino", 1);
+        nave sub2 = new nave("coloso", "submarino", 1);
+        nave sub3 = new nave("La perla", "submarino", 1);
+        nave sub4 = new nave("Isaac", "submarino", 1);
 
-        // CASILLERO 10x10
+        // Casillero 10x10
         casillero = new casilla[10][10];
 
         for (int i = 0; i < 10; i++) {
@@ -54,17 +55,17 @@ public class tablero {
             }
         }
 
-        // portaaviones
-        casillero[1][1].setNave(por1);
-        casillero[1][2].setNave(por1);
+        // pos-portaaviones
+        casillero[1][1].setNave(port1);
+        casillero[2][2].setNave(port1);
 
-        // fragatas
-        casillero[3][3].setNave(fra1);
-        casillero[4][3].setNave(fra1);
-        casillero[5][3].setNave(fra1);
+        // pos-fragatas
+        casillero[5][3].setNave(frag1);
+        casillero[4][1].setNave(frag1);
+        casillero[1][2].setNave(frag1);
 
-        // submarinos
-        casillero[4][6].setNave(sub1);
+        // pos-submarinos
+        casillero[6][4].setNave(sub1);
     }
 
     /**
@@ -76,7 +77,6 @@ public class tablero {
      *         agua, tocado o hundido
      */
     public Integer comprobar_impacto(int x, int y) {
-        System.out.println("Impacto en (" + x + "," + y + ")");
         return casillero[x][y].disparar();
     }
 }

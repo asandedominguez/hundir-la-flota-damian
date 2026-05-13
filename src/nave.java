@@ -1,6 +1,5 @@
 /**
  * Representa una nave dentro del juego.
- *
  * Cada nave tiene un nombre, tipo, puntos de vida y un estado
  * que indica si ha sido hundida.
  */
@@ -39,7 +38,6 @@ public class nave {
 
     /**
      * Constructor de la clase nave.
-     *
      * @param nombre nombre de la nave
      * @param tipo tipo de nave
      * @param vida puntos de vida iniciales
@@ -53,9 +51,7 @@ public class nave {
 
     /**
      * Recibe un disparo sobre la nave.
-     *
      * Reduce la vida en 1 y devuelve el estado del impacto.
-     *
      * @return TOCADO si aún tiene vida,
      *         HUNDIDO si la vida llega a 0 o menos
      */
@@ -64,47 +60,47 @@ public class nave {
 
         if (vida <= 0) {
             hundido = true;
-            System.out.println(nombre + " hundido");
+            System.out.println(nombre + ". Navio hundido");
             return HUNDIDO;
         } else {
-            System.out.println(nombre + " tocado. Vida restante: " + vida);
+            System.out.println(nombre + ". Navio tocado. Te quedan...: " + vida);
             return TOCADO;
         }
     }
 
     /**
      * Obtiene el nombre de la nave.
-     *
      * @return nombre de la nave
      */
     public String getNombre() {
+
         return nombre;
     }
 
     /**
      * Obtiene el tipo de la nave.
-     *
      * @return tipo de nave
      */
     public String getTipo() {
+
         return tipo;
     }
 
     /**
      * Obtiene la vida restante de la nave.
-     *
      * @return puntos de vida actuales
      */
     public int getVida() {
+
         return vida;
     }
 
     /**
      * Indica si la nave está hundida.
-     *
      * @return true si está hundida, false en caso contrario
      */
     public boolean isHundido() {
+
         return hundido;
     }
 }

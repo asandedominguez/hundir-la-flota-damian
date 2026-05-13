@@ -1,6 +1,5 @@
 /**
  * Representa una casilla del tablero.
- *
  * Cada casilla puede contener una nave y almacenar si ya ha sido
  * atacada anteriormente.
  */
@@ -8,7 +7,6 @@ public class casilla {
 
     /**
      * Nave ubicada en la casilla.
-     *
      * Puede ser null si la casilla está vacía.
      */
     private nave nave;
@@ -20,7 +18,6 @@ public class casilla {
 
     /**
      * Constructor de la clase casilla.
-     *
      * Inicializa la casilla vacía y sin usar.
      */
     public casilla() {
@@ -30,25 +27,20 @@ public class casilla {
 
     /**
      * Realiza un disparo sobre la casilla.
-     *
      * @return null si la casilla ya fue usada,
      *         0 si el disparo cae en agua,
      *         o el resultado devuelto por la nave al recibir el disparo
      */
     public Integer disparar() {
 
-        // Si ya fue usada
         if (usada) {
             System.out.println("Ya disparaste aquí");
             return null;
         }
 
-        // Marcar como usada
         usada = true;
 
-        // Si no hay nave
         if (nave == null) {
-            System.out.println("Agua");
             return 0;
         }
 
@@ -62,12 +54,12 @@ public class casilla {
      * @return nave asociada a la casilla
      */
     public nave getNave() {
+
         return nave;
     }
 
     /**
      * Asigna una nave a la casilla.
-     *
      * @param nave nave que se colocará en la casilla
      */
     public void setNave(nave nave) {
@@ -76,7 +68,6 @@ public class casilla {
 
     /**
      * Indica si la casilla ya fue utilizada.
-     *
      * @return true si ya recibió un disparo, false en caso contrario
      */
     public boolean isUsada() {
